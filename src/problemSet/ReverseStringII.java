@@ -7,9 +7,12 @@ package problemSet;
  *
  * https://leetcode-cn.com/problems/reverse-string-ii/
  *
- * https://leetcode-cn.com/submissions/detail/32828427/
+ * https://leetcode-cn.com/submissions/detail/32832538/
  *
  * 为了2ms的耗时牺牲了很多空间，这种写法不值得~~
+ *
+ * 把原本string的写法换成了StringBuilder耗时减少了很多
+ * 有时间可以好好研究一下StringBuilder的内部构造
  */
 
 public class ReverseStringII {
@@ -24,7 +27,7 @@ public class ReverseStringII {
 
     public String reverseStr(String s, int k) {
         boolean reverser = true;
-        String result = "";
+        StringBuilder result = new StringBuilder();
         while (s.length() > result.length()) {
             int len = result.length();
             String substring = "";
@@ -36,22 +39,22 @@ public class ReverseStringII {
                 reverser = false;
                 if (lengthCheck){
                     if (len == 0) {
-                        result += new StringBuilder(s).reverse().toString();
+                        result.append(new StringBuilder(s).reverse().toString());
                     }else{
-                        result += new StringBuilder(s.substring(len)).reverse().toString();
+                        result.append(new StringBuilder(s.substring(len)).reverse().toString());
                     }
                 }else{
-                    result += new StringBuilder(substring).reverse().toString();
+                    result.append(new StringBuilder(substring).reverse().toString());
                 }
             }else{
                 reverser = true;
                 if (lengthCheck){
-                    result += s.substring(len);
+                    result.append(s.substring(len));
                 }else{
-                    result += substring;
+                    result.append(substring);
                 }
             }
         }
-        return result;
+        return result.toString();
     }
 }
