@@ -71,4 +71,15 @@ public class print {
         }
         System.out.println("[" + result.substring(0, result.length() - 2) + "]");
     }
+
+    public static void print(int[] ints){
+        System.out.print("[");
+        for (int i = 0; i < ints.length; i++) {
+            System.out.print(ints[i]);
+            if (i != ints.length - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println("]");
+    }
 }
