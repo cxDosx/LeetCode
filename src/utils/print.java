@@ -1,5 +1,6 @@
 package utils;
 
+import node.ListNode;
 import node.TreeNode;
 
 import java.util.LinkedList;
@@ -56,5 +57,18 @@ public class print {
             nodeQueue.add(node.right);
         }
         System.out.println("[" + output.substring(0, output.length() - 2) + "]");
+    }
+
+    public static void print(ListNode node){
+        if (node == null) {
+            System.out.println("[]");
+        }
+
+        StringBuilder result = new StringBuilder();
+        while (node != null) {
+            result.append(node.val).append(", ");
+            node = node.next;
+        }
+        System.out.println("[" + result.substring(0, result.length() - 2) + "]");
     }
 }
