@@ -1,7 +1,7 @@
 package problemSet
 
 /**
- * 周赛107
+ * 周赛197
  * 1512. 好数对的数目
  * Easy
  *
