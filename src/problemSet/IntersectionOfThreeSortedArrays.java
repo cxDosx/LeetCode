@@ -1,4 +1,4 @@
-package weeklyContest;
+package problemSet;
 
 import java.util.*;
 

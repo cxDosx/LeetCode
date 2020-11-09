@@ -1,4 +1,4 @@
-package weeklyContest;
+package problemSet;
 
 /**
  * 周赛151
@@ -22,11 +22,11 @@ public class CompareStringsbyFrequencyoftheSmallestCharacter {
             int[] result = new int[queries.length];
             for (int i = 0; i < queries.length; i++) {
                 int c = 0;
-                for (int j = 0; j < words.length; j++) {
+                for (String word : words) {
                     if (f(queries[i]) > words.length) {
                         continue;
                     }
-                    if (f(queries[i]) < f(words[j])){
+                    if (f(queries[i]) < f(word)) {
                         c++;
                     }
                 }
