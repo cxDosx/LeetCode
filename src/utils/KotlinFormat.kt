@@ -40,6 +40,18 @@ fun String.convertToInt2Array(): Array<IntArray> {
     return partList.toTypedArray()
 }
 
+fun String.convertToStringList(): List<String> {
+    var input = this.trim { it <= ' ' }
+    input = input.substring(1, input.length - 1)
+    input = input.replace(""""""".toRegex(), "")
+    input = input.replace(" ".toRegex(), "")
+    if (input.isEmpty()) {
+        return ArrayList()
+    }
+
+    return input.split(",".toRegex()).toTypedArray().toList()
+}
+
 fun Array<IntArray>.print() {
     print("[")
     this.forEach {
