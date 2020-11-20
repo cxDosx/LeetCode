@@ -1,7 +1,7 @@
 package utils
 
 fun main() {
-    makeClassName("maximum-number-of-non-overlapping-subarrays-with-sum-equals-target")
+    makeClassName("insertion-sort-list")
 }
 
 /**

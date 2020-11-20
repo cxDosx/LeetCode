@@ -1,5 +1,7 @@
 package utils
 
+import node.ListNode
+
 
 fun String.convertToIntArray(): IntArray {
     var input = this.trim { it <= ' ' }
@@ -104,4 +106,35 @@ fun List<Int>?.print() {
             print(", ")
         }
     }
+}
+
+fun String.convertToListNode(): ListNode? {
+
+    // Generate array from the input
+    val nodeValues = this.convertToIntArray()
+
+    // Now convert that list into linked list
+
+    // Now convert that list into linked list
+    val dummyRoot = ListNode(0)
+    var ptr = dummyRoot
+    for (item in nodeValues) {
+        ptr.next = ListNode(item)
+        ptr = ptr.next
+    }
+    return dummyRoot.next
+}
+
+fun ListNode?.print() {
+    if (this == null) {
+        println("[]")
+    }
+
+    val result = StringBuilder()
+    var node = this
+    while (node != null) {
+        result.append(node.`val`).append(", ")
+        node = node.next
+    }
+    println("[" + result.substring(0, result.length - 2) + "]")
 }
